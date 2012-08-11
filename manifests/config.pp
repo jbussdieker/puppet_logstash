@@ -4,8 +4,8 @@ class logstash::config inherits logstash {
     ensure => "present",
     owner => "root",
     group => "root",
-    source => "puppet:///modules/logstash/conf",
     mode => 0644,
+    source => "puppet:///modules/logstash/logstash.conf",
   }
 
 }

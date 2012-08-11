@@ -5,7 +5,7 @@ class logstash::service inherits logstash {
     owner => "root",
     group => "root",
     mode => 0755,
-    source => "puppet:///modules/logstash/init_script",
+    source => "puppet:///modules/logstash/logstash",
   }
 
 }
