@@ -1,6 +1,7 @@
 class logstash::package inherits logstash {
 
   exec { "logstash_download":
+    cwd => "/tmp",
     command => "/usr/bin/wget -o /tmp/logstash-1.1.1-monolithic.jar http://semicomplete.com/files/logstash/logstash-1.1.1-monolithic.jar",
     creates => "/tmp/logstash-1.1.1-monolithic.jar",
   }
