@@ -1,0 +1,13 @@
+#!/bin/sh
+COMMAND="/usr/bin/java -- -jar /opt/logstash-1.1.1-monolithic.jar agent -f /etc/logstash.conf -- web --backend elasticsearch:///?local"
+
+case "$1" in
+start)
+	echo "Starting logstash..."
+	start-stop-daemon --start --background --exec $COMMAND
+;;
+stop)
+	echo "Stopping logstash..."
+	start-stop-daemon --stop --exec $COMMAND
+;;
+esac
